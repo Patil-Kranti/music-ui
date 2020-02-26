@@ -18,6 +18,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
 
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setEnabledSystemUIOverlays ([]);
     return Scaffold(
       resizeToAvoidBottomInset: false,
       body: Container(

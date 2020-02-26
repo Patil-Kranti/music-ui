@@ -1,5 +1,6 @@
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:music_new_ui/login.dart';
 
 import 'Data_Model.dart';
@@ -16,6 +17,7 @@ class _OnBoardingState extends State<OnBoarding> {
 
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setEnabledSystemUIOverlays ([]);
     double width = MediaQuery.of(context).size.width;
     double height = MediaQuery.of(context).size.height;
 

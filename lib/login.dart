@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:toast/toast.dart';
 import 'MainScreen.dart';
 import 'forgotPassword.dart';
@@ -22,6 +23,7 @@ class _AuthpageState extends State<AuthPage> {
   String success;
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setEnabledSystemUIOverlays([]);
     return Scaffold(
       resizeToAvoidBottomInset: false,
       body: Container(

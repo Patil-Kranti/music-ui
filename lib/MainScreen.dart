@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:expanding_bottom_bar/expanding_bottom_bar.dart';
+import 'package:flutter/services.dart';
 import 'package:music_new_ui/homeScreen.dart';
 import 'package:music_new_ui/library.dart';
 
@@ -24,6 +25,7 @@ class _MainScreenState extends State<MainScreen> with WidgetsBindingObserver {
 
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setEnabledSystemUIOverlays ([]);
     return Scaffold(
         resizeToAvoidBottomInset: false,
         body: screens[index],
