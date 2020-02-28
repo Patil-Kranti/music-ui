@@ -17,9 +17,8 @@ class _MainScreenState extends State<MainScreen> with WidgetsBindingObserver {
   var index = 0;
   var screens = [
     HomeScreen(),
-    Library(),
     StreamingScreen(),
-    BookMarks(),
+    Library(),
     SettingsScreen()
   ];
 
@@ -31,7 +30,7 @@ class _MainScreenState extends State<MainScreen> with WidgetsBindingObserver {
         body: screens[index],
         bottomNavigationBar: ExpandingBottomBar(
             animationDuration: Duration(milliseconds: 500),
-            backgroundColor: Theme.of(context).backgroundColor,
+            backgroundColor: Colors.black,
             
             navBarHeight: 60,
             items: [
@@ -40,21 +39,18 @@ class _MainScreenState extends State<MainScreen> with WidgetsBindingObserver {
                   text: "Home",
                   selectedColor: Colors.pinkAccent),
               ExpandingBottomBarItem(
-                  icon: Icons.music_note,
-                  text: "Library",
-                  selectedColor: Colors.deepPurpleAccent),
+                  icon: Icons.location_on,
+                  text: "Explore",
+                  selectedColor: Colors.pinkAccent),
               ExpandingBottomBarItem(
-                  icon: Icons.queue_music,
-                  text: "Stream",
-                  selectedColor: Colors.amberAccent),
+                  icon: Icons.radio,
+                  text: "Radio",
+                  selectedColor: Colors.pinkAccent),
               ExpandingBottomBarItem(
-                  icon: Icons.favorite_border,
-                  text: "Favourites",
+                  icon: Icons.account_circle,
+                  text: "Accounts",
                   selectedColor: Colors.red),
-              ExpandingBottomBarItem(
-                  icon: Icons.settings,
-                  text: "Settings",
-                  selectedColor: Colors.blueAccent)
+              
             ],
             selectedIndex: index,
             onIndexChanged: (i) {

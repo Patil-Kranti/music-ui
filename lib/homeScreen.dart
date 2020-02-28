@@ -11,7 +11,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        color: Color(0xff00104d),
+        color: Colors.black,
         padding: EdgeInsets.only(
           top: 25,
         ),
@@ -230,8 +230,13 @@ class _HomeScreenState extends State<HomeScreen> {
                   width: MediaQuery.of(context).size.width,
                   height: 80,
                   child: InkWell(
-                    onTap: (){Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) =>Library()));},
-                                      child: Card(
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (BuildContext context) => Library()));
+                    },
+                    child: Card(
                       color: Colors.pink[900],
                       child: Row(
                         crossAxisAlignment: CrossAxisAlignment.center,

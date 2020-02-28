@@ -57,6 +57,16 @@ flutter:
       - assets/next.png
       - assets/play.png
       - assets/previous.png
+      - assets/profile.jpeg
+      - assets/recent1.jpg
+      - assets/recent2.jpg
+      - assets/recent3.jpeg
+      - assets/recent4.jpeg
+      - assets/recent5.jpeg
+      - assets/recent6.jpeg
+      - assets/recent7.jpeg
+      - assets/recent8.jpg
+      - assets/editprofile.jpeg
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
 
