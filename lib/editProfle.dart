@@ -11,10 +11,10 @@ class _EditProfileState extends State<EditProfile> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
+     backgroundColor: Color.fromRGBO(14, 11, 31, 1),
       appBar: AppBar(
         title: Center(child: Text("Edit")),
-        backgroundColor: Colors.black,
+        backgroundColor: Color.fromRGBO(14, 11, 31, 1),
       ),
       body: Stack(
         alignment: Alignment.topCenter,
@@ -31,14 +31,17 @@ class _EditProfileState extends State<EditProfile> {
             ),
           ),
           Align(
-            alignment: Alignment.centerRight,
-                      child: IconButton(
-              icon: Icon(
-                Icons.add_a_photo,
-                color: Colors.white,
-                size: 38,
+            alignment: Alignment.topCenter,
+            child: Padding(
+              padding: const EdgeInsets.only(top:158.0,left: 105),
+              child: IconButton(
+                icon: Icon(
+                  Icons.add_a_photo,
+                  color: Colors.white,
+                  size: 38,
+                ),
+                onPressed: () {},
               ),
-              onPressed: () {},
             ),
           ),
         ],

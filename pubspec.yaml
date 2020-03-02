@@ -56,6 +56,8 @@ flutter:
       - assets/twitter.png
       - assets/next.png
       - assets/play.png
+      - assets/playlist.jpg
+      - assets/bonney.jpg
       - assets/previous.png
       - assets/profile.jpeg
       - assets/recent1.jpg
@@ -66,6 +68,12 @@ flutter:
       - assets/recent6.jpeg
       - assets/recent7.jpeg
       - assets/recent8.jpg
+      - assets/album1.jpg
+      - assets/album2.jpg
+      - assets/album3.jpg
+      - assets/album4.jpg
+      - assets/album5.jpg
+      - assets/album6.jpg
       - assets/editprofile.jpeg
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

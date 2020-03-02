@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:expanding_bottom_bar/expanding_bottom_bar.dart';
 import 'package:flutter/services.dart';
+import 'package:music_new_ui/Explore.dart';
 import 'package:music_new_ui/homeScreen.dart';
 import 'package:music_new_ui/library.dart';
 
-import 'StreamingScreen.dart';
-import 'bookmarks.dart';
 import 'settingsScreem.dart';
 
 class MainScreen extends StatefulWidget {
@@ -15,48 +13,43 @@ class MainScreen extends StatefulWidget {
 
 class _MainScreenState extends State<MainScreen> with WidgetsBindingObserver {
   var index = 0;
-  var screens = [
+  int _currentIndex = 0;
+  final List<Widget> _children = [
     HomeScreen(),
-    StreamingScreen(),
+    Explore(),
     Library(),
     SettingsScreen()
   ];
-
   @override
   Widget build(BuildContext context) {
-    SystemChrome.setEnabledSystemUIOverlays ([]);
+    SystemChrome.setEnabledSystemUIOverlays([]);
     return Scaffold(
-        resizeToAvoidBottomInset: false,
-        body: screens[index],
-        bottomNavigationBar: ExpandingBottomBar(
-            animationDuration: Duration(milliseconds: 500),
-            backgroundColor: Colors.black,
-            
-            navBarHeight: 60,
-            items: [
-              ExpandingBottomBarItem(
-                  icon: Icons.home,
-                  text: "Home",
-                  selectedColor: Colors.pinkAccent),
-              ExpandingBottomBarItem(
-                  icon: Icons.location_on,
-                  text: "Explore",
-                  selectedColor: Colors.pinkAccent),
-              ExpandingBottomBarItem(
-                  icon: Icons.radio,
-                  text: "Radio",
-                  selectedColor: Colors.pinkAccent),
-              ExpandingBottomBarItem(
-                  icon: Icons.account_circle,
-                  text: "Accounts",
-                  selectedColor: Colors.red),
-              
-            ],
-            selectedIndex: index,
-            onIndexChanged: (i) {
-              setState(() {
-                index = i;
-              });
-            }));
+      body: _children[_currentIndex],
+      backgroundColor: Colors.black,
+      resizeToAvoidBottomInset: false,
+      bottomNavigationBar: BottomNavigationBar(
+        type: BottomNavigationBarType.fixed,
+        currentIndex: _currentIndex,
+        backgroundColor: Color.fromRGBO(14, 11, 31, 1),
+        selectedItemColor: Colors.pink,
+        unselectedItemColor: Colors.white,
+        onTap: _onTabTapped,
+        items: [
+          BottomNavigationBarItem(icon: Icon(Icons.home), title: Text("Home")),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.location_on), title: Text("Explore")),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.radio), title: Text("Radio")),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.account_circle), title: Text("Account")),
+        ],
+      ),
+    );
+  }
+
+  void _onTabTapped(int value) {
+    setState(() {
+      _currentIndex = value;
+    });
   }
 }

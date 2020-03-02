@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:music_new_ui/album.dart';
+import 'package:music_new_ui/artist.dart';
 import 'package:music_new_ui/editProfle.dart';
+import 'package:music_new_ui/playlist.dart';
 
 class SettingsScreen extends StatefulWidget {
   @override
@@ -9,13 +12,11 @@ class SettingsScreen extends StatefulWidget {
 class _SettingsScreenState extends State<SettingsScreen> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Container(
-        color: Colors.black,
-        padding: EdgeInsets.only(
-          top: 25,
-        ),
-        child: SingleChildScrollView(
+    return Container(
+      color: Color.fromRGBO(14, 11, 31, 1),
+      child: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
           child: Column(
             children: <Widget>[
               Padding(
@@ -150,6 +151,12 @@ class _SettingsScreenState extends State<SettingsScreen> {
                 ),
               ),
               ListTile(
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (BuildContext context) => Playlist()));
+                },
                 leading: Icon(
                   Icons.queue_music,
                   color: Colors.white,
@@ -167,6 +174,12 @@ class _SettingsScreenState extends State<SettingsScreen> {
                 color: Colors.white,
               ),
               ListTile(
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (BuildContext context) => Album()));
+                },
                 leading: Icon(
                   Icons.album,
                   color: Colors.white,
@@ -205,6 +218,12 @@ class _SettingsScreenState extends State<SettingsScreen> {
                   Icons.perm_contact_calendar,
                   color: Colors.white,
                 ),
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (BuildContext context) => Artist()));
+                },
                 title: Text(
                   "Artist",
                   style: TextStyle(color: Colors.white),
