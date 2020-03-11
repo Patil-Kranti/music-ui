@@ -17,38 +17,12 @@ class _OnBoardingState extends State<OnBoarding> {
 
   @override
   Widget build(BuildContext context) {
-    SystemChrome.setEnabledSystemUIOverlays ([]);
+    SystemChrome.setEnabledSystemUIOverlays([]);
     double width = MediaQuery.of(context).size.width;
     double height = MediaQuery.of(context).size.height;
 
-    return Scaffold(
-      floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
-      floatingActionButton: MaterialButton(
-          child: _currentPageNotifier.value != 1
-              ? Text(
-                  "NEXT",
-                  style: TextStyle(
-                      color: Colors.blueAccent,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 18),
-                )
-              : Text("FINISH",
-                  style: TextStyle(
-                      color: Colors.blueAccent,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 18)),
-          onPressed: () {
-            if (_currentPageNotifier.value != 1) {
-              setState(() {
-                pageController.nextPage(
-                    duration: Duration(seconds: 1), curve: Curves.easeIn);
-              });
-            } else {
-              Navigator.of(context).pushReplacement(
-                  new MaterialPageRoute(builder: (context) => AuthPage()));
-            }
-          }),
-      body: Stack(
+    return Container(
+      child: Stack(
         children: <Widget>[
           PageView.builder(
               controller: pageController,
@@ -83,7 +57,38 @@ class _OnBoardingState extends State<OnBoarding> {
                 ),
               ),
             ),
-          )
+          ),
+          Align(
+            alignment: Alignment.bottomRight,
+            child: Padding(
+              padding: const EdgeInsets.all(18.0),
+              child: MaterialButton(
+                  child: _currentPageNotifier.value != 2
+                      ? Text(
+                          "NEXT",
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 18),
+                        )
+                      : Text("FINISH",
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 18)),
+                  onPressed: () {
+                    if (_currentPageNotifier.value != 2) {
+                      setState(() {
+                        pageController.nextPage(
+                            duration: Duration(seconds: 1), curve: Curves.easeIn);
+                      });
+                    } else {
+                      Navigator.of(context).pushReplacement(new MaterialPageRoute(
+                          builder: (context) => AuthPage()));
+                    }
+                  }),
+            ),
+          ),
         ],
       ),
     );

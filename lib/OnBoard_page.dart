@@ -20,45 +20,55 @@ class _OnBoardPageState extends State<OnBoardPage> {
     double width = MediaQuery.of(context).size.width;
     double height = MediaQuery.of(context).size.height;
 
-    return Scaffold(
-        backgroundColor: Colors.white,
-        body: SingleChildScrollView(
-          child: Column(
-            children: <Widget>[
-              Padding(
-                padding: EdgeInsets.only(top: height * 0.1),
-                child: Align(
-                  alignment: Alignment.center,
-                  child: Text(
-                    widget.pageModel.heading,
-                    style: TextStyle(fontSize: 25, fontWeight: FontWeight.w500),
-                  ),
-                ),
-              ),
-              new Image.asset(
-                widget.pageModel.imagePath,
-                height: height * 0.5,
-                fit: BoxFit.fitWidth,
-                width: width,
-              ),
-              Padding(
-                padding: EdgeInsets.only(
-                    top: height * 0.05, left: width * 0.1, right: width * 0.1),
-                child: Center(
-                  child: Text(
-                    widget.pageModel.subHead,
-                    softWrap: true,
-                    maxLines: 3,
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.normal,
-                    ),
-                  ),
-                ),
-              )
-            ],
-          ),
-        ));
+    return Container(
+      height: height,
+      decoration: BoxDecoration(
+        color: Colors.black,
+        image: DecorationImage(
+            image: AssetImage(widget.pageModel.imagePath),
+            fit: BoxFit.cover,
+            colorFilter: ColorFilter.mode(
+                Colors.black.withOpacity(0.95), BlendMode.dstATop)),
+      ),
+
+      // SingleChildScrollView(
+      //   child: Column(
+      //     children: <Widget>[
+      //       Padding(
+      //         padding: EdgeInsets.only(top: height * 0.1),
+      //         child: Align(
+      //           alignment: Alignment.center,
+      //           child: Text(
+      //             widget.pageModel.heading,
+      //             style: TextStyle(fontSize: 25, fontWeight: FontWeight.w500),
+      //           ),
+      //         ),
+      //       ),
+      //       new Image.asset(
+      //         widget.pageModel.imagePath,
+      //         // height: height * 0.5,
+      //         fit: BoxFit.fitWidth,
+      //         width: width,
+      //       ),
+      //       Padding(
+      //         padding: EdgeInsets.only(
+      //             top: height * 0.05, left: width * 0.1, right: width * 0.1),
+      //         child: Center(
+      //           child: Text(
+      //             widget.pageModel.subHead,
+      //             softWrap: true,
+      //             maxLines: 3,
+      //             textAlign: TextAlign.center,
+      //             style: TextStyle(
+      //               fontSize: 20,
+      //               fontWeight: FontWeight.normal,
+      //             ),
+      //           ),
+      //         ),
+      //       )
+      //     ],
+      //   ),
+      // ),
+    );
   }
 }
