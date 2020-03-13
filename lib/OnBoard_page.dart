@@ -23,12 +23,12 @@ class _OnBoardPageState extends State<OnBoardPage> {
     return Container(
       height: height,
       decoration: BoxDecoration(
-        color: Colors.black,
+        color: Colors.white,
         image: DecorationImage(
             image: AssetImage(widget.pageModel.imagePath),
             fit: BoxFit.cover,
             colorFilter: ColorFilter.mode(
-                Colors.black.withOpacity(0.95), BlendMode.dstATop)),
+                Colors.black.withOpacity(0.8), BlendMode.dstATop)),
       ),
 
       // SingleChildScrollView(

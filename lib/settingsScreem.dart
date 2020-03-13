@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:music_new_ui/album.dart';
 import 'package:music_new_ui/artist.dart';
 import 'package:music_new_ui/editProfle.dart';
+import 'package:music_new_ui/mvScreen.dart';
 import 'package:music_new_ui/playlist.dart';
 
 class SettingsScreen extends StatefulWidget {
@@ -130,11 +131,11 @@ class _SettingsScreenState extends State<SettingsScreen> {
                         ),
                       ),
                       onPressed: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (BuildContext context) =>
-                                    EditProfile()));
+                        // Navigator.push(
+                        //     context,
+                        //     MaterialPageRoute(
+                        //         builder: (BuildContext context) =>
+                        //             EditProfile()));
                       },
                     ),
                   ),
@@ -209,6 +210,9 @@ class _SettingsScreenState extends State<SettingsScreen> {
                   Icons.arrow_forward_ios,
                   color: Colors.white,
                 ),
+                onTap: (){
+                  Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context) =>MVScreen()));
+                },
               ),
               Divider(
                 color: Colors.white,
